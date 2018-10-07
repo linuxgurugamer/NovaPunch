@@ -1,0 +1,190 @@
+//This config adds the smoke back to the landing engines.
+//You need to rename this to 'shield.cfg' after deleting the current one, or remove the .bak extension and change
+// the 'name = NP_newOdinShield' to something else - add a '2' at the end or something.
+
+PART
+{
+// Kerbal Space Program - Part Config
+
+// --- general parameters ---
+name = NP_newOdinShield
+module = Part
+author = Tiberion
+
+
+// --- asset parameters ---
+MODEL
+{
+	model = NovaPunch2/Parts/Odin2/OdinShield/shield
+	scale = 1.0, 1.0, 1.0
+	rotation = 0, 0, 0
+	position = 0, 0, 0
+}
+rescaleFactor = 1
+
+
+// --- node definitions ---
+node_stack_top =    0, -0.13,  0, 0, 1, 0, 1
+node_stack_bottom = 0,   -0.2,  0, 0, 1, 0, 1
+node_stack_leg1 =   0.845,   -0.1425,  0, 0, 1, 0, 0
+node_stack_leg2 =  -0.845,   -0.1425,  0, 0, 1, 0, 0
+node_stack_leg3 =   0,   -0.1425,  0.845, 0, 1, 0, 0
+node_stack_leg4 =   0,   -0.1425, -0.845, 0, 1, 0, 0
+
+// --- editor parameters ---
+TechRequired = advLanding
+entryCost = 4100
+cost = 340
+category = Utility
+subcategory = 0
+title = Odin Heat Shield
+manufacturer = Tiberdyne Aerospace
+description = Heat Shield and Retro-engines
+// attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
+attachRules = 1,0,1,1,1
+stackSymmetry = 3
+
+// --- standard part parameters ---
+mass = 0.5
+dragModelType = default
+maximum_drag = 0.2
+minimum_drag = 0.2
+angularDrag = 2
+crashTolerance = 45
+maxTemp = 2900
+
+breakingForce = 2500
+breakingTorque = 2500
+
+fuelCrossFeed = False
+NoCrossFeedNodeKey = bottom
+
+EFFECTS
+{
+  running_closed
+  {
+    AUDIO
+    {
+      channel = Ship
+      clip = sound_rocket_spurts
+      volume = 0.0 0.0
+      volume = 1.0 1.0
+      pitch = 0.0 0.2
+      pitch = 1.0 1.0
+      loop = true
+    }
+    PREFAB_PARTICLE
+    {
+      prefabName = fx_smokeTrail_veryLarge
+      transformName = smokePoint
+      emission = 0.0 0.0
+      emission = 0.05 0.0
+      emission = 0.075 0.25
+      emission = 1.0 1.25
+      speed = 0.0 0.25
+      speed = 1.0 1.0
+      localOffset = 0, 1, 2
+    }
+    MODEL_MULTI_PARTICLE
+    {
+      modelName = Squad/FX/LES_Thruster
+      transformName = smokePoint
+      emission = 0.0 0.0
+      emission = 0.05 0.0
+      emission = 0.075 0.25
+      emission = 1.0 1.25
+      speed = 0.0 0.5
+      speed = 1.0 1.2
+      
+    }
+  }
+  engage
+  {
+    AUDIO
+    {
+      channel = Ship
+      clip = sound_vent_soft
+      volume = 1.0
+      pitch = 2.0
+      loop = false
+    }
+  }
+  flameout
+  {
+    PREFAB_PARTICLE
+    {
+      prefabName = fx_exhaustSparks_flameout_2
+      transformName = smokePoint
+      oneShot = true
+    }
+    AUDIO
+    {
+      channel = Ship
+      clip = sound_explosion_low
+      volume = 1.0
+      pitch = 2.0
+      loop = false
+    }
+  }
+}
+
+ 
+MODULE
+{
+	name = ModuleEnginesFX
+	thrustVectorTransformName = thrustTransform
+	engineID = OdinLanding
+	runningEffectName = running_closed
+	exhaustDamage = True
+	ignitionThreshold = 0.1
+	minThrust = 0
+	maxThrust = 100
+	heatProduction = 200
+	fxOffset = 0, 0, 0.1
+	PROPELLANT
+	{
+		name = LiquidFuel
+       	        ratio = 0.9
+		DrawGauge = True
+	}
+	PROPELLANT
+	{
+		name = Oxidizer
+		ratio = 1.1
+	}
+	atmosphereCurve
+ 	{
+   	 key = 0 410
+  	 key = 1 405
+ 	}
+	
+}
+
+MODULE
+{
+	name = ModuleGimbal
+	gimbalTransformName = thrustTransform
+	gimbalRange = 0.05
+}
+
+MODULE
+{
+      name = ModuleAnimateHeat
+      ThermalAnim = EmissiveAnimation
+}
+
+RESOURCE
+{
+ name = LiquidFuel
+ amount = 108
+ maxAmount = 108
+}
+
+RESOURCE
+{
+ name = Oxidizer
+ amount = 132
+ maxAmount = 132
+}
+
+}

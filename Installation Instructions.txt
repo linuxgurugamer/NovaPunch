@@ -1,0 +1,18 @@
+Remove existing "Gamedata\NovaPunch" folder from previous installs of this version. Do NOT remove \Gamedata, just the subfolder 'NovaPunch".
+
+Open up the downloaded .zip file
+
+Drag and drop the enclosed GameData directory on top of your GameData directory. AKA Merge the GameData in the zip file with your exiting \GameData file.
+
+You should end up with a directory named "NovaPunch" inside \GameData, with all your other mods. You should NOT have \GameData\GameData\NovaPunch. That way lays madness.
+
+Sample Ships:  Open up "Ships" and/or "Subassemblies" inside the zip file, and copy the VAB directory where you need the samples. 
+
+
+Please Note:
+
+This mod includes version checking using MiniAVC. If you opt-in, it will use the internet to check whether there is a new version of this mod is available. Data sent out from your PC is limited to the info needed to check the mod version, no personal information is sent. For a more comprehensive version checking experience, please download the complete KSP-AVC Plugin.
+
+If you don't like using MiniAVC, or already have the full blown installation of AVC, you can go into \GameData\NovaPunch and delete 'Mini-AVC.DLL'.
+
+Personally, I just keep a current copy of the Mini-AVC.DLL in my \GameData and remove it from all mods as I install them.

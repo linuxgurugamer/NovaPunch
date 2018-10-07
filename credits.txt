@@ -1,0 +1,22 @@
+This is my attempt to resurrect the NovaPunch2 project, which in itself was a merger of parts packs SIDR by NovaSilisko and Wobbly Rockets by SundayPunch.  (Hence “NovaPunch”)  Tiberion carried the merged pack thru until real life requirements caught up to his free time. 
+
+Credits:
+
+  SundayPunch - Original parts
+  NovaSilisko - Original parts
+  Captain Slug - Original parts
+  Omnivore (modeling, math & balancing research)
+  Straight Chillen (modeling and configuration)
+  Andras (playtesting and engine balance)
+  Tiberion (some stuff)
+  frizzank (NovaPunch resident artist)
+  bac9 (new textures for adapter plates)
+  sumghai (Agency logos
+  Cpt Kipard (Agency Logos)
+  therealcrow999 (Agency Logos)
+  Padrone (Updating to KSP 1.2.1)
+
+You can find the original thread from Tiberion here:  
+
+http://forum.kerbalspaceprogram.com/index.php?/topic/3871-102-novapunch-209-may-6th-10-compatibility-update/
+
