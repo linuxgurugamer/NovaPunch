@@ -1,4 +1,9 @@
-﻿NovaPunch Continued - Padrone
+﻿	Updated all RCS parts, replacing ModuleRCS with ModuleRCSFX
+	Added effects for all RCS
+	Reformatted some cfg files with standardized formatting
+
+
+NovaPunch Continued - Padrone
 --------------------------------------------------------------------------------
 2018 Apr 01 - 0.1.4.4
 	Fixed K1 second stage LF/Ox mix.  You'll see a small dv increase in using this tank.

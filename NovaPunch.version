@@ -1,8 +1,6 @@
 {
-  "NAME": "NovaPunch Continued",
+  "NAME": "NovaPunch Rebalanced",
   "URL": "https://raw.githubusercontent.com/linuxgurugamer/NovaPunch/master//NovaPunch.version",
-  "DOWNLOAD": "http://spacedock.info/mod/1076/NovaPunch%20Continued",
-  "CHANGE_LOG_URL": "http://spacedock.info/mod/1076/NovaPunch%20Continued#changelog",
   "VERSION": {
     "MAJOR": 0,
     "MINOR": 1,
