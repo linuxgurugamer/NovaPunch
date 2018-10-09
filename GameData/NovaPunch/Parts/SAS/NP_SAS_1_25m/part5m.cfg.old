@@ -1,0 +1,68 @@
+PART
+{
+
+// --- general parameters ---
+name = NP_sas_500m
+module = Part
+author = Frizzank
+
+// --- asset parameters ---
+MODEL
+{
+model = NovaPunch/Parts/SAS/NP_SAS_1_25m/model
+scale = 4, 4, 4
+}
+scale = 1.0
+rescaleFactor = 1
+
+// --- node definitions ---
+// definition format is Position X, Position Y, Position Z, Up X, Up Y, Up Z
+node_stack_bottom = 0.0, -0.252, 0.0, 0.0, -1.0, 0.0, 3
+node_stack_top = 0.0, 0.252, 0.0, 0.0, 1.0, 0.0, 3
+
+// --- FX definitions ---
+
+
+// --- editor parameters ---
+TechRequired = metaMaterials
+entryCost = 9800
+cost = 5200
+category = 1
+subcategory = 0
+title = MPM-500 Reaction Wheel Module
+manufacturer = Silisko Industries
+description = A Reaction Wheel module for 5.0 meter rockets. Large and shiny!
+
+// attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
+attachRules = 1,0,1,1,0
+
+// --- standard part parameters ---
+mass = 4.8
+dragModelType = default
+maximum_drag = 0.2
+minimum_drag = 0.2
+angularDrag = 2
+crashTolerance = 100
+breakingForce = 15000
+breakingTorque = 15000
+maxTemp = 2000
+bulkheadProfiles = size3
+tags = reaction size4 SAS
+
+
+MODULE
+{
+	name = ModuleReactionWheel
+	
+	PitchTorque = 65
+	YawTorque = 65
+	RollTorque = 65
+	
+	RESOURCE
+	{
+		name = ElectricCharge
+		rate = 4.0
+	}
+}
+
+}

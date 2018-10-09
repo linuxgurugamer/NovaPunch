@@ -1,0 +1,88 @@
+PART
+{
+	// --- general parameters ---
+	name = NP_chute_FuelTankCapParachute
+	module = Part
+	author = NovaSilisko | Tiberion
+
+	// --- asset parameters ---
+	MODEL
+	{
+		model = NovaPunch/Parts/Parachutes/NP_chute_Radialparachute/canopy
+		scale = 1.0, 1.0, 1.0
+		rotation = 0, 0, 0
+		position = 0, 0, 0
+	}
+	MODEL
+	{
+		model = NovaPunch/Parts/Parachutes/NP_chute_FuelTankCapParachute/fuelcap
+		scale = 1.0, 1.0, 1.0
+		rotation = 0, 0, 0
+		position = 0, 0, 0
+	}
+	scale = 1
+	rescaleFactor = 1.0
+
+	// --- node definitions ---
+	// definition format is Position X, Position Y, Position Z, Up X, Up Y, Up Z, size
+	node_stack_bottom = 0.0, -0.528, 0.0, 0.0, -1.0, 0.0, 0
+
+	// --- FX definitions ---
+	sound_parachute_open = activate
+
+	// --- editor parameters ---
+	TechRequired = survivability
+	entryCost = 1600
+	cost = 1800
+	category = Aero
+	subcategory = 0
+	title = HH-77b Nosecone + Parachute (1.25m)
+	manufacturer = Silisko Industries
+	description = An orange tank nosecone from the HH-77 line of budget spacecraft parts, now with an attached parachute.
+
+	// attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
+	attachRules = 1,0,1,0,0
+
+	// --- standard part parameters ---
+	mass = 0.6
+	dragModelType = default
+	angularDrag = 3
+	crashTolerance = 250
+	maxTemp = 2000
+	bulkheadProfiles = size1
+	bodyLiftMultiplier = 0
+	stageOffset = -1
+	tags = aero parachute
+
+	MODULE
+	{
+		name = ModuleParachute
+		invertCanopy = true
+		autoCutSpeed = 0.5
+		capName = Cap
+		canopyName = Canopy
+		semiDeployedAnimation = semiDeploy
+		fullyDeployedAnimation = fullDeploy
+		stowedDrag = 0.22
+		semiDeployedDrag = 5
+		fullyDeployedDrag = 750
+		minAirPressureToOpen = 0.04
+		clampMinAirPressure = 0.04
+		deployAltitude = 500
+		deploymentSpeed = 0.16667
+		semiDeploymentSpeed = 0.5	
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		dragCubeName = SEMIDEPLOYED
+		dragModifier = 0.33
+	}
+	MODULE
+	{
+		name = ModuleDragModifier
+		dragCubeName = DEPLOYED
+		dragModifier = 12
+	}
+
+}

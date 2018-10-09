@@ -1,0 +1,187 @@
+PART
+{
+
+// --- general parameters ---
+name = NP_SRB_0_625m_AdvBlite3
+module = Part
+author = Tiberion
+
+// --- asset parameters ---
+MODEL
+{
+	model = NovaPunch/Parts/SolidBoosters/NP_SRB_AdvBLite/motor
+	scale = 0.5, 0.5, 0.5
+	rotation = 0, 0, 0
+	position = 0, -2.75, 0
+}
+
+MODEL
+{
+	model = NovaPunch/Parts/SolidBoosters/NP_SRB_AdvBLite/segment
+	scale = 0.5, 0.5, 0.5
+	rotation = 0, 0, 0
+	position = 0, -1.431, 0
+}
+
+MODEL
+{
+	model = NovaPunch/Parts/SolidBoosters/NP_SRB_AdvBLite/segment
+	scale = 0.5, 0.5, 0.5
+	rotation = 0, 0, 0
+	position = 0, 0.05, 0
+}
+
+MODEL
+{
+	model = NovaPunch/Parts/SolidBoosters/NP_SRB_AdvBLite/segment
+	scale = 0.5, 0.5, 0.5
+	rotation = 0, 0, 0
+	position = 0, 1.531, 0
+}
+
+MODEL
+{
+	model = NovaPunch/Parts/SolidBoosters/NP_SRB_AdvBLite/fairing
+	scale = 0.5, 0.4, 0.5
+	rotation = 0, 0, 0
+	position = 0, -2.98, 0
+}
+
+scale = 1.0
+rescaleFactor = 1.0
+//rescaleFactor = 0.5 - baked in
+
+
+// --- node definitions ---
+node_stack_bottom = 0.0, -3.185, 0.0, 0.0, -1.0, 0.0, 1
+node_stack_top = 0.0, 2.277, 0.0, 0.0, 1.0, 0.0, 1
+node_attach = 0.323, 0.0, 0.0, 1.0, 0.0, 0.0
+
+
+// --- FX definitions ---
+
+fx_exhaustFlame_yellow = 0.0, -2.0, 0.0, 0.0, 1.0, 0.0, running
+fx_exhaustLight_yellow = 0.0, -2.0, 0.0, 0.0, 0.0, 1.0, running
+fx_smokeTrail_medium = 0.0, -2.0, 0.0, 0.0, 1.0, 0.0, running
+fx_exhaustSparks_yellow = 0.0, -2.0, 0.0, 0.0, 0.866, 0.5, running
+fx_exhaustSparks_yellow = 0.0, -2.0, 0.0, 0.0, 0.866, -0.5, running
+
+
+
+// --- Sound FX definition ---
+sound_vent_medium = engage
+sound_rocket_hard = running
+sound_vent_soft = disengage
+sound_explosion_low = flameout
+
+
+// --- editor parameters ---
+TechRequired = generalRocketry
+entryCost = 3000
+cost = 500
+category = Engine
+subcategory = 0
+title = Advanced Solid Booster - Mini (0.625m - 3 segment)
+manufacturer = Tiberdyne Aerospace
+description = A very small Solid Rocket Booster. This one has 3 segments.
+
+// attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
+attachRules = 1,1,1,1,0
+
+// --- standard part parameters ---
+mass = 1.0
+emissiveConstant = 0.5
+dragModelType = default
+maximum_drag = 0.3
+minimum_drag = 0.2
+angularDrag = 2
+crashTolerance = 45
+breakingForce = 500
+breakingTorque = 500
+maxTemp = 2500
+bulkheadProfiles = size0
+
+stagingIcon = SOLID_BOOSTER
+
+//This is a 2 segment SRB, 0.625m diameter.
+//Each segment adds thrust of 75, and holds 130 fuel. Each segment's drymass is 0.3t with 0.1t for the motor.
+
+
+MODULE
+{
+	name = ModuleEngines
+	thrustVectorTransformName = thrustTransform
+	throttleLocked = True
+	exhaustDamage = True
+	ignitionThreshold = 0.1
+	minThrust = 0
+	maxThrust = 205
+	heatProduction = 200
+	useEngineResponseTime = True
+	engineAccelerationSpeed = 8.0
+	allowShutdown = False
+	fxOffset = 0, 0, 0.97
+	PROPELLANT
+	{
+		name = SolidFuel
+        	ratio = 1.0
+		DrawGauge = True
+	}
+	atmosphereCurve
+ 	{
+   	 key = 0 200
+	 key = 0.8 186
+  	 key = 1 172
+	 key = 6 0.001
+ 	}
+	
+}
+MODULE
+{
+	name = ModuleSurfaceFX
+	thrustProviderModuleIndex = 0
+	fxMax = 20
+	maxDistance = 120
+	falloff = 1.5
+	thrustTransformName = thrustTransform
+}
+
+
+
+MODULE
+{
+      name = ModuleAnimateHeat
+      ThermalAnim = EmissiveAnimation
+}
+
+MODULE
+{
+       name = ModuleJettison
+       jettisonName = fairing
+       bottomNodeName = bottom
+       isFairing = True
+       jettisonedObjectMass = 0.1
+       jettisonForce = 0.01
+       jettisonDirection = 0 0 1
+	
+}
+
+RESOURCE
+{
+ name = SolidFuel
+ amount = 390
+ maxAmount = 390
+}
+
+MODULE
+{
+	name = ModuleTestSubject
+	
+	// nowhere: 0, srf: 1, ocean: 2, atmo: 4, space: 8
+	environments = 13
+	
+	useStaging = True
+	useEvent = False
+}
+
+}

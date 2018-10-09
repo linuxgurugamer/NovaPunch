@@ -1,0 +1,80 @@
+PART
+{
+
+// --- general parameters ---
+name = NP_lft_K1tank_3_75m
+module = Part
+author = Tiberion
+
+// --- asset parameters ---
+MODEL
+{
+model = NovaPunch/Parts/FuelTanks/NP_K1_Stages/tank375m
+scale = 1, 1, 1
+}
+scale = 1
+rescaleFactor = 1.0
+
+
+// --- node definitions ---
+node_stack_top = 0.0, 3.23, 0.0, 0.0, 1.0, 0.0, 2
+node_stack_bottom = 0.0, -2.5, 0.0, 0.0, -1.0, 0.0, 3
+
+
+
+
+// --- editor parameters ---
+TechRequired = heavierRocketry
+entryCost = 8800
+cost = 15800
+category = FuelTank
+subcategory = 0
+title = K1 Heavy Lifter 2nd Stage Tank (3.75m to 2.5m)
+manufacturer = Novapunch LLC
+description = The 2nd stage tank of the K1 heavy lifter rocket. Attach "Littlemother" here.
+
+// attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
+attachRules = 1,0,1,1,0
+
+// --- standard part parameters ---
+mass = 5.0
+dragModelType = default
+maximum_drag = 0.2
+minimum_drag = 0.3
+angularDrag = 2
+crashTolerance = 160
+// Padrone - Changed next two from 1000
+breakingForce = 50000
+breakingTorque = 50000
+maxTemp = 2000
+bulkheadProfiles = size3, size2
+
+stageOffset = 1
+childStageOffset = 1
+
+RESOURCE
+{
+ name = LiquidFuel
+ amount = 3365
+ maxAmount = 3365
+}
+
+RESOURCE
+{
+ name = Oxidizer
+ amount = 4113
+ maxAmount = 4113
+}
+
+MODULE
+{
+    name = ModuleDecouple
+    ejectionForce = 300
+    explosiveNodeID = top
+}
+
+// --- fuel tank parameters ---
+// keeps fuel from flowing INTO the top node (to create a stage|fuel barrier for the built-in decoupler)
+NoCrossFeedNodeKey = top
+
+}

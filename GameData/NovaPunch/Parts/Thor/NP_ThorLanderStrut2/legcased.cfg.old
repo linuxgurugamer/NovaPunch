@@ -1,0 +1,74 @@
+PART
+{
+// --- general parameters ---
+name = NP_ThorLanderstrut2
+module = Part
+author = Tiberion | Frizzank
+
+// --- asset parameters ---
+MODEL
+{
+	model = NovaPunch/Parts/Thor/NP_ThorLanderStrut2/legcased
+	scale = 1.0, 1.0, 1.0
+	rotation = 0, 0, 0
+	position = 0, 0, 0
+}
+scale = 1.0
+rescaleFactor = 1
+
+// --- node definitions ---
+node_attach = -0.03, 0.0, 0.0, -1, 0, 0
+
+
+// --- editor parameters ---
+TechRequired = landing
+entryCost = 3500
+cost = 480
+category = Ground
+subcategory = 0
+title = LM-10-2 Support Structure (Thor Lander)
+manufacturer = Novapunch LLC
+description = A folding landing leg with a built-in protective case.
+
+// attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
+attachRules = 0,1,0,0,1
+
+// --- standard part parameters ---
+mass = 0.1
+dragModelType = default
+maximum_drag = 0.2
+minimum_drag = 0.2
+angularDrag = 2
+crashTolerance = 160
+breakingForce = 15000
+breakingTorque = 15000
+maxTemp = 2000
+bulkheadProfiles = srf
+deploySpeed = 0.5
+retractSpeed = -0.5
+randomSpeedFactor = 0.05
+tags = landing leg
+
+MODULE
+{
+	name = ModuleAnimateGeneric
+	animationName = Deploy
+	isOneShot = false
+	startEventGUIName = Extend
+	endEventGUIName = Retract
+	actionGUIName = Toggle  
+	allowAnimationWhileShielded = False
+}
+
+MODULE
+{
+	name = ModuleTestSubject
+	
+	// nowhere: 0, srf: 1, ocean: 2, atmo: 4, space: 8
+	environments = 1
+	
+	useStaging = False
+	useEvent = True
+}
+
+}
