@@ -1,12 +1,14 @@
-﻿Alpha-1
-	Updated all RCS parts, replacing ModuleRCS with ModuleRCSFX
-	Added effects for all RCS
-	Reformatted cfg files with standardized formatting
+﻿	Added jenkins and local buildit.bat
 
 Alpha-2
+	Reformatted cfg files with standardized formatting
 	Localized all parts files, currently only en-us is available
 	Fixed reentry for Frejya Command Capsule, doesn't flip on reentry now
 	Fixed bouyancy for Frejya Command Capsule, now floats correctly
+
+Alpha-1
+	Updated all RCS parts, replacing ModuleRCS with ModuleRCSFX
+	Added effects for all RCS
 
 
 NovaPunch Continued - Padrone
