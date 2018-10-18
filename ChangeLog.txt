@@ -10,6 +10,14 @@ Alpha-1
 	Updated all RCS parts, replacing ModuleRCS with ModuleRCSFX
 	Added effects for all RCS
 
+Beta-1
+	Recalculated? all tanks masses and volumes
+	Fixed the crash tolerance?, breakingForce and breakingTorque on all parts
+	Fixed the engine plumes
+
+Beta-2 (unreleased)
+	Commented out gimbals where the range was zero
+
 
 NovaPunch Continued - Padrone
 --------------------------------------------------------------------------------
