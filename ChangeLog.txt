@@ -17,6 +17,7 @@ Beta-1
 
 Beta-2 (unreleased)
 	Commented out gimbals where the range was zero
+	Added and updated tags to all parts
 
 
 NovaPunch Continued - Padrone
