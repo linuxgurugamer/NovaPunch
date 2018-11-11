@@ -234,3 +234,6 @@ $RECYCLE.BIN/
 *.pdb
 .vs
 *.zip
+NovaPunch-1/
+NovaPunch-1/*
+NovaPunch-1/*.*

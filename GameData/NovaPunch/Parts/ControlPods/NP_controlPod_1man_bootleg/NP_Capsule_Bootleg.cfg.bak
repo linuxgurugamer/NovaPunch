@@ -1,58 +1,54 @@
 PART
 {
+
 	// --- general parameters ---
-	name = NP_OdinCapsule2W
+	name = NP_Capsule_Bootleg
 	module = Part
-	author = Tiberion
+	author = NovaSilisko
 
 	// --- asset parameters ---
+	mesh = model.mu
 	scale = 1.0
-	rescaleFactor = 1
 
 	// --- node definitions ---
 	// definition format is Position X, Position Y, Position Z, Up X, Up Y, Up Z
-	node_stack_top = 0.0, 1.69, 0.0, 0.0, 1.0, 0.0, 1
-	node_stack_bottom = 0.0, -0.45, 0.0, 0.0, -1.0, 0.0, 1
+	node_stack_bottom = 0.0, -0.39, 0.0, 0.0, -1.0, 0.0, 1
+	node_stack_top = 0.0, 0.62, 0.0, 0.0, 1.0, 0.0, 0
 
 	// --- editor parameters ---
-	TechRequired = advFlightControl
-	entryCost = 5800
-	cost = 4000
+	TechRequired = start
+	entryCost = 0
+	cost = 600
 	category = Pods
 	subcategory = 0
-	title = #NP_OdinCapsule2W_Part_title // #NP_OdinCapsule2W_Part_title = Odin OTV Command Capsule
-	manufacturer = #NP_OdinCapsule2W_Part_manufacturer // #NP_OdinCapsule2W_Part_manufacturer = Tiberdyne Aerospace
-	description = #NP_OdinCapsule2W_Part_description // #NP_OdinCapsule2W_Part_description = The command pod for the crew of the Odin Orbital Transport Vehicle.  Now with a showroom white finish!
+	title = #NP_Capsule_Bootleg_Part_title // #NP_Capsule_Bootleg_Part_title = Bootleg Command Module, Small
+	manufacturer = #NP_Capsule_Bootleg_Part_manufacturer // #NP_Capsule_Bootleg_Part_manufacturer = Silisko Industries
+	description = #NP_Capsule_Bootleg_Part_description // #NP_Capsule_Bootleg_Part_description = Constructed of the highest quality scrap metal, glass bottles and used paper mache. Holds 1 kerbal
 
 	// attachment rules: stack, srfAttach, allowStack, allowSrfAttach, allowCollision
 	attachRules = 1,0,1,1,0
 
 	// --- standard part parameters ---
-	mass = 4
+	mass = 1
 	dragModelType = default
 	maximum_drag = 0.2
-	minimum_drag = 0.15
-	angularDrag = 2
+	minimum_drag = 0.1
+	angularDrag = 1
 	crashTolerance = 45
+	breakingForce = 50
+	breakingTorque = 50
+	
 	maxTemp = 2400
-	bulkheadProfiles = size2, size1
-	tags = #NP_OdinCapsule2W_Part_tags // #NP_OdinCapsule2W_Part_tags = NovaPunch command CM manned size2
+	bulkheadProfiles = size0, size1
+	tags = #NP_Capsule_Bootleg_Part_tags // capsule cm command control ?eva fly gyro ?iva moment novapunch pilot react rocket size1 space stab steer torque
+	vesselType = Ship
 
 	// --- internal setup ---
-	CrewCapacity = 3
-	vesselType = Ship
-	tags = #NP_OdinCapsule2W_Part_tags // capsule cm command control ?eva fly gyro ?iva manned moment novapunch odin pilot react rocket size2 space stab steer torque
+	CrewCapacity = 1
 
-	MODEL
-	{
-		model = NovaPunch/Parts/Odin2/OdinPod/podW
-		scale = 1.0, 1.0, 1.0
-		rotation = 0, 0, 0
-		position = 0, 0, 0
-	}
 	INTERNAL
 	{
-		name = PodCockpit
+		name = mk1PodCockpit
 	}
 	MODULE
 	{
@@ -62,8 +58,8 @@ PART
 	RESOURCE
 	{
 		name = ElectricCharge
-		amount = 500
-		maxAmount = 500
+		amount = 100
+		maxAmount = 100
 	}
 	MODULE
 	{
@@ -81,14 +77,14 @@ PART
 	MODULE
 	{
 		name = ModuleReactionWheel
-		PitchTorque = 20
-		YawTorque = 20
-		RollTorque = 20
+		PitchTorque = 5
+		YawTorque = 5
+		RollTorque = 5
 
 		RESOURCE
 		{
 			name = ElectricCharge
-			rate = 1.5
+			rate = 0.24
 		}
 	}
 	MODULE
@@ -107,15 +103,9 @@ PART
 	MODULE
 	{
 		name = ModuleScienceContainer
-
 		reviewActionName = Review Stored Data
 		storeActionName = Store Experiments
 		evaOnlyStorage = True
-		storageRange = 2.0
-	}
-	MODULE
-	{
-		name = FlagDecal
-		textureQuadName = FlagTransform
+		storageRange = 1.3
 	}
 }

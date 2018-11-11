@@ -1,23 +1,36 @@
-﻿	Added jenkins and local buildit.bat
+﻿LinuxGurugamer adoption
 
-Alpha-2
-	Reformatted cfg files with standardized formatting
-	Localized all parts files, currently only en-us is available
-	Fixed reentry for Frejya Command Capsule, doesn't flip on reentry now
-	Fixed bouyancy for Frejya Command Capsule, now floats correctly
+0.1.5.0
+	Initial full release, includes all changes in alpha & betas below
 
-Alpha-1
-	Updated all RCS parts, replacing ModuleRCS with ModuleRCSFX
-	Added effects for all RCS
+	Alpha-1
+		Added jenkins and local buildit.bat
+		Reorganized directories so that the Frejya, Thor and Odin can be loaded individually
+		Fixed engine particles (Thanks @Poodmund)
+		Fixed clamp offsets for the: NP - Wobbly Rockets Lift Vehicle+
 
-Beta-1
-	Recalculated? all tanks masses and volumes
-	Fixed the crash tolerance?, breakingForce and breakingTorque on all parts
-	Fixed the engine plumes
+	Alpha-2
+		Reformatted cfg files with standardized formatting
+		Localized all parts files, currently only en-us is available
+		Fixed reentry for Frejya Command Capsule, doesn't flip on reentry now
+		Fixed bouyancy for Frejya Command Capsule, now floats correctly
 
-Beta-2 (unreleased)
-	Commented out gimbals where the range was zero
-	Added and updated tags to all parts
+	Alpha-1
+		Updated all RCS parts, replacing ModuleRCS with ModuleRCSFX
+		Added effects for all RCS
+
+	Beta-1
+		Recalculated? all tanks masses and volumes
+		Fixed the crash tolerance?, breakingForce and breakingTorque on all parts
+		Fixed the engine plumes
+
+	Beta-2 
+		Commented out gimbals where the range was zero
+		Added and updated tags to all parts
+
+	Beta-3 (unreleased)
+		Moved The Feyja, Odin and Thor into their own folders underneath
+		NovaPunch, this will make it easier to make those optional installs
 
 
 NovaPunch Continued - Padrone
