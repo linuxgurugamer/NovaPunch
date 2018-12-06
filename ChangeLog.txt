@@ -1,5 +1,11 @@
 ﻿LinuxGurugamer adoption
 
+0.1.5.1 
+	Thanks to @Shadowmage:
+		Updated ML-22 Landing Leg
+	Thanks to @taniwha:
+		The M50 Main rocket Engine is again available
+	
 0.1.5.0
 	Initial full release, includes all changes in alpha & betas below
 
