@@ -1,5 +1,13 @@
 ﻿LinuxGurugamer adoption
 
+0.1.6.2
+	Thanks to forum user @SpinkAkron for noticing these errors:
+		Fixed bulkheadProfiles in the following:
+			NP_interstage_375m_5m_SAS
+			NP_interstage_375m_5m_tank?
+			NP_interstage_5m_375m_plate
+			NP_decoupler_stack_5m
+
 0.1.6.1
 	Added back lines which were accidently deleted from the 2.5m Bronco Single engine
 	
