@@ -1,5 +1,8 @@
 ﻿LinuxGurugamer adoption
 
+0.1.6.3
+	Fixed NP_lfe_25m_Orbitalbertha (had an extra }  )
+
 0.1.6.2
 	Thanks to forum user @SpinkAkron for noticing these errors:
 		Fixed bulkheadProfiles in the following:
