@@ -1,4 +1,7 @@
 ﻿LinuxGurugamer adoption
+0.1.6.4
+    Thanks to @leatherneck6017 for these fixes:
+        Fix several bulkhead size errors
 
 0.1.6.3
 	Fixed NP_lfe_25m_Orbitalbertha (had an extra }  )
