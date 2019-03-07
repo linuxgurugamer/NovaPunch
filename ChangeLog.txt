@@ -1,4 +1,7 @@
 ﻿LinuxGurugamer adoption
+0.1.6.5
+    Added whitelist file for the new ReStock mod
+    
 0.1.6.4
     Thanks to @leatherneck6017 for these fixes:
         Fix several bulkhead size errors
