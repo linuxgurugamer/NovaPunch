@@ -1,4 +1,7 @@
 ﻿LinuxGurugamer adoption
+0.1.6.6
+	Fixed Agent for silisko industries, replaced duplicated name with title
+
 0.1.6.5
     Added whitelist file for the new ReStock mod
     
