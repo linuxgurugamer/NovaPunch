@@ -1,4 +1,8 @@
 ﻿LinuxGurugamer adoption
+
+0.1.6.8
+	Fixed Odin Shield Leg retraction
+
 0.1.6.7
 	Fixed Bertha Quad Engine's effects
 
