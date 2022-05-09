@@ -1,5 +1,8 @@
 ﻿LinuxGurugamer adoption
 
+0.1.7.2
+	Thanks to forum user @mark7 for Waterfall configs
+
 0.1.7.1
 	Thanks to forum user @Drew Kerman for this:
 		Fixed gimbal transforms for NP_lfe_125m_K2XEngine and NP_lfe_375m_K2X
