@@ -1,5 +1,10 @@
 ﻿LinuxGurugamer adoption
 
+0.1.7.3
+	Fixed warnings from ModuleManager about trailing colons
+	Extracted LF-A30 Liquid Fuel Aerospike Engine (1.875m) from embedded RAR
+	file in the Waterfall patches
+	Deleted embedded RAR file
 0.1.7.2
 	Thanks to forum user @mark7 for Waterfall configs
 
